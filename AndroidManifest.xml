@@ -133,7 +133,7 @@
         </activity>
         <service
             android:process="@string/process"
-            android:name=".pbap.BluetoothPbapService" >
+            android:name=".pbap.BluetoothPbapService">
             <intent-filter>
                 <action android:name="android.bluetooth.IBluetoothPbap" />
             </intent-filter>
