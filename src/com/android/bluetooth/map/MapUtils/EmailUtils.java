@@ -28,13 +28,8 @@
 
 package com.android.bluetooth.map.MapUtils;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 import java.util.Date;
 import java.util.List;
-import java.util.Set;
 
 import android.content.ContentResolver;
 import android.content.Context;
@@ -47,11 +42,10 @@ import android.util.TimeFormatException;
 import com.android.bluetooth.map.BluetoothMasAppIf.BluetoothMasMessageRsp;
 import com.android.bluetooth.map.BluetoothMasAppParams;
 
-
 public class EmailUtils {
 
-        public final String TAG = "EmailUtils";
-        public static final int BIT_SUBJECT = 0x1;
+    public final String TAG = "EmailUtils";
+    public static final int BIT_SUBJECT = 0x1;
     public static final int BIT_DATETIME = 0x2;
     public static final int BIT_SENDER_NAME = 0x4;
     public static final int BIT_SENDER_ADDRESSING = 0x8;
@@ -484,7 +478,6 @@ public class EmailUtils {
                 bmsg.setRecipientVcard_email(recipientName.trim());
             }
 
-
             // TODO Set either Encoding or Native
 
             // TODO how to get body for MMS? This is for SMS only
@@ -556,6 +549,5 @@ public class EmailUtils {
         }
         return null;
     }
-
 
 }

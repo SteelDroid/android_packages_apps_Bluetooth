@@ -851,7 +851,6 @@ public class MapUtils {
 
     }
 
-
     /**
      * fromBmessageSMS
      *
@@ -1108,7 +1107,6 @@ public class MapUtils {
             return null;
         }
     }
-
 
     /**
      * fetchVersion

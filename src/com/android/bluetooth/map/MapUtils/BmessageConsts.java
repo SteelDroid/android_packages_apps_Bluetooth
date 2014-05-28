@@ -163,9 +163,6 @@ public class BmessageConsts {
         this.originator_vcard_phone_number = vcard_phone_number;
     }
 
-
-
-
     //end Email
 
     public String getBody_charset() {

@@ -28,8 +28,6 @@
 
 package com.android.bluetooth.map;
 
-
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -357,7 +355,6 @@ public class BluetoothMns {
         return location;
     }
 
-
     /**
      * Post a MNS Event to the MNS thread
      */
@@ -573,7 +570,6 @@ public class BluetoothMns {
 
         //email end
 
-
         Uri smsInboxObserverUri = Uri.parse("content://mms-sms/inbox");
         mContext.getContentResolver().registerContentObserver(
                 smsInboxObserverUri, true, inboxContentObserver);
@@ -597,7 +593,6 @@ public class BluetoothMns {
         Uri smsQueuedObserverUri = Uri.parse("content://mms-sms/queued");
         mContext.getContentResolver().registerContentObserver(
                 smsQueuedObserverUri, true, queuedContentObserver);
-
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(Intent.ACTION_DEVICE_STORAGE_LOW);
@@ -740,7 +735,6 @@ public class BluetoothMns {
     private Cursor crMmsSentA = null;
     private Cursor crMmsSentB = null;
 
-
     private Cursor crEmailA = null;
     private Cursor crEmailB = null;
     private Cursor crEmailOutboxA = null;
@@ -805,7 +799,6 @@ public class BluetoothMns {
     private final int CR_EMAIL_SENT_A = 1;
     private final int CR_EMAIL_SENT_B = 2;
     private int currentCREmailSent = CR_EMAIL_SENT_A;
-
 
     /**
      * Get the folder name (MAP representation) based on the
@@ -920,7 +913,6 @@ public class BluetoothMns {
         }
         return newFolder;
     }
-
 
     private BroadcastReceiver mStorageStatusReceiver = new BroadcastReceiver() {
         @Override
@@ -1472,8 +1464,6 @@ public class BluetoothMns {
         }
     }
 
-
-
     /**
      * This class listens for changes in Sms Content Provider
      * It acts, only when a new entry gets added to database
@@ -1729,7 +1719,6 @@ public class BluetoothMns {
         }
     }
 
-
     /**
      * This class listens for changes in Sms Content Provider's inbox table
      * It acts, only when a entry gets removed from the table
@@ -1838,8 +1827,6 @@ public class BluetoothMns {
             }
         }
     }
-
-
 
     /**
      * This class listens for changes in Sms Content Provider's Sent table

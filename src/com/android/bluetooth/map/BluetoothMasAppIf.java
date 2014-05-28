@@ -39,15 +39,12 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import android.app.Activity;
 import android.app.PendingIntent;
 import android.bluetooth.BluetoothDevice;
 import android.content.BroadcastReceiver;
-import android.content.ComponentName;
 import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
@@ -73,7 +70,6 @@ import com.android.bluetooth.map.MapUtils.SmsMmsUtils;
 import com.android.bluetooth.map.MapUtils.SortMsgListByDate;
 import com.android.bluetooth.map.MapUtils.EmailUtils;
 import com.android.bluetooth.map.MapUtils.CommonUtils;
-
 
 import javax.obex.*;
 
@@ -133,7 +129,6 @@ public class BluetoothMasAppIf {
     private final int DELETED_THREAD_ID = -1;
 
     private final boolean mnsServiceEnabled = false;
-
 
     // root -> telecom -> msg -> (FolderList) includes inbox, outbox, sent, etc
     // For SMS/MMS FolderList[] = { Inbox, Outbox, Sent, Deleted, Draft };
@@ -583,8 +578,6 @@ public class BluetoothMasAppIf {
     }
 
     private OwnerInfo ownerInfo = null;
-
-
 
     /**
      * Get the owners name
@@ -1037,7 +1030,6 @@ public class BluetoothMasAppIf {
                         Log.d(TAG, "move to Liststartoffset"
                                 + cursor.moveToPosition(appParams.ListStartOffset));
 
-
                         if (cursor.moveToFirst()) {
 
                             do {
@@ -1089,8 +1081,7 @@ public class BluetoothMasAppIf {
                         }
                     }//end email Messages if
                 }
-            }
-            else {
+            } else {
                 if (appParams.FilterPriority > 0x02) {
                     rsp.rsp = ResponseCodes.OBEX_HTTP_BAD_REQUEST;
                 }
@@ -1439,7 +1430,6 @@ public class BluetoothMasAppIf {
 
             bmsg.setBody_msg(smsBody);
 
-
             // Send a bMessage
             Log.d(TAG, "bMessageSMS test\n");
             Log.d(TAG, "=======================\n\n");
@@ -1476,8 +1466,7 @@ public class BluetoothMasAppIf {
 
             }
 
-        }
-        else{
+        } else {
 
             // No SMS message was discovered with that handle, now look for an
             // MMS message
@@ -1499,8 +1488,7 @@ public class BluetoothMasAppIf {
             }
             if (mmsMsgID > 0) {
                 bldMmsBmsg(mmsMsgID, rsp);
-            }
-            else{ //No SMS and MMS messages were discovered. now look for email messages
+            } else { //No SMS and MMS messages were discovered. now look for email messages
                 Log.d(TAG, "Inside email :");
                 // Email message
                 int emailMsgID = 0;
@@ -1535,8 +1523,7 @@ public class BluetoothMasAppIf {
                     if (fileR.exists() == true) {
                         rsp.file = fileR;
                         rsp.fractionDeliver = 1;
-                    }
-                    else {
+                    } else {
                         rsp.rsp = ResponseCodes.OBEX_HTTP_BAD_REQUEST;
                     }
 
@@ -1631,8 +1618,6 @@ public class BluetoothMasAppIf {
             folderId = cr.getInt(cr.getColumnIndex("_id"));
         }
 
-
-
         Cursor cr1;
         String whereClause1 = "UPPER(emailAddress) LIKE  '"+OrigEmail.toUpperCase().trim()+"'";
         cr1 = context.getContentResolver().query(
@@ -1642,8 +1627,6 @@ public class BluetoothMasAppIf {
             cr1.moveToFirst();
             accountId = cr1.getInt(cr1.getColumnIndex("_id"));
         }
-
-
 
         Log.d(TAG, "-------------");
         Log.d(TAG, "To address " + address);
@@ -1748,7 +1731,6 @@ public class BluetoothMasAppIf {
     private String SmsText;
     private String SmsHandle;
 
-
     private String EmailAddress;
     private String EmailText;
     private String EmailHandle;
@@ -1779,8 +1761,6 @@ public class BluetoothMasAppIf {
             rsp.response = ResponseCodes.OBEX_HTTP_BAD_REQUEST;
             return rsp;
         }
-
-
 
         byte[] readBytes = null;
         FileInputStream fis;
@@ -1921,7 +1901,6 @@ public class BluetoothMasAppIf {
                 rsp.msgHandle = SmsHandle;
             }
 
-
             SmsManager sms = SmsManager.getDefault();
 
             Log.d(TAG, " Trying to send SMS ");
@@ -1935,8 +1914,7 @@ public class BluetoothMasAppIf {
                 e.printStackTrace();
 
             }
-        }
-        else if(type!=null && type.equalsIgnoreCase("EMAIL")){
+        } else if(type!=null && type.equalsIgnoreCase("EMAIL")){
             Log.d(TAG, " Before fromBmessageemail method:: "+readStr);
             BmessageConsts bMsg = mu.fromBmessageEmail(readStr);
             EmailAddress = bMsg.getRecipientVcard_email();
@@ -1977,8 +1955,7 @@ public class BluetoothMasAppIf {
                 this.context.startService(emailIn);
 
                 return rsp;
-            }
-            else{
+            } else{
                 String splitStrings[] = CurrentPath.split("/");
                 mnsClient.addMceInitiatedOperation("+");
                 int tmp = splitStrings.length;
@@ -1989,8 +1966,7 @@ public class BluetoothMasAppIf {
                     } else {
                         folderName = name;
                     }
-                }
-                else {
+                } else {
                     folderName = splitStrings[tmp - 1];
                 }
 
@@ -2050,9 +2026,7 @@ public class BluetoothMasAppIf {
                 String threadIdStr = crThreadId.getString(crThreadId.getColumnIndex("thread_id"));
                 Log.d(TAG, " THREAD ID " + threadIdStr);
                 updateMMSThreadId(msgHandle, Integer.valueOf(threadIdStr));
-            }
-            else
-            {
+            } else {
                 /* No thread for the given address
                  * Create a fake message to obtain the thread, use that thread_id
                  * and then delete the fake message
@@ -2072,15 +2046,12 @@ public class BluetoothMasAppIf {
                     updateMMSThreadId(msgHandle, Integer.valueOf(newThreadIdStr));
 
                     context.getContentResolver().delete(tempUri, null, null);
-                }
-                else {
+                } else {
                     Log.d(TAG, "Error in undelete");
                 }
             }
             crThreadId.close();
-        }
-        else
-        {
+        } else {
             Log.d(TAG, "msgHandle not found");
         }
         cr.close();
@@ -2132,9 +2103,7 @@ public class BluetoothMasAppIf {
                 String threadIdStr = crThreadId.getString(crThreadId.getColumnIndex("thread_id"));
                 Log.d(TAG, " THREAD ID " + threadIdStr);
                 updateSMSThreadId(msgHandle, Integer.valueOf(threadIdStr));
-            }
-            else
-            {
+            } else {
                 /* No thread for the given address
                  * Create a fake message to obtain the thread, use that thread_id
                  * and then delete the fake message
@@ -2157,14 +2126,11 @@ public class BluetoothMasAppIf {
                 }
             }
             crThreadId.close();
-        }
-        else
-        {
+        } else {
             Log.d(TAG, "msgHandle not found");
         }
         cr.close();
     }
-
 
     /**
      * Sets the message status (read/unread, delete)
@@ -2248,13 +2214,11 @@ public class BluetoothMasAppIf {
                 folderName = cr1.getString(cr1.getColumnIndex("displayName"));
                 if(folderName.equalsIgnoreCase("INBOX")){
                     inboxFolderId = cr1.getInt(cr1.getColumnIndex("_id"));
-                }
-                else{
+                } else {
                     deletedFolderId = cr1.getInt(cr1.getColumnIndex("_id"));
                 }
             } while ( cr1.moveToNext());
         }
-
 
         //Query the message table for the given message id
         int emailMsgId = 0;
@@ -2271,8 +2235,7 @@ public class BluetoothMasAppIf {
                 ContentValues values = new ContentValues();
                 values.put("flagRead", bluetoothMasAppParams.StatusValue);
                 context.getContentResolver().update(uri2, values, null, null);
-            }
-            else {
+            } else {
                 if (bluetoothMasAppParams.StatusValue == 1) { //if the email is deleted
                     msgFolderId = cr.getInt(cr.getColumnIndex("mailboxKey"));
                     if(msgFolderId == deletedFolderId){
@@ -2281,14 +2244,12 @@ public class BluetoothMasAppIf {
                         context.getContentResolver().delete(
                                 Uri.parse("content://com.android.email.provider/message/"
                                 + emailMsgId), null, null);
-                    }
-                    else{
+                    } else {
                         ContentValues values = new ContentValues();
                         values.put("mailboxKey", deletedFolderId);
                         context.getContentResolver().update(uri2, values, null, null);
                     }
-                }
-                else{ // if the email is undeleted
+                } else { // if the email is undeleted
                     ContentValues values = new ContentValues();
                     values.put("mailboxKey", inboxFolderId);
                     context.getContentResolver().update(uri2, values, null, null);
@@ -2296,7 +2257,6 @@ public class BluetoothMasAppIf {
             }
             return ResponseCodes.OBEX_HTTP_OK;
         }
-
 
         return ResponseCodes.OBEX_HTTP_INTERNAL_ERROR;
     }
@@ -2382,13 +2342,11 @@ public class BluetoothMasAppIf {
                 folderName = cr1.getString(cr1.getColumnIndex("displayName"));
                 if(folderName.equalsIgnoreCase("INBOX")){
                     inboxFolderId = cr1.getInt(cr1.getColumnIndex("_id"));
-                }
-                else{
+                } else {
                     deletedFolderId = cr1.getInt(cr1.getColumnIndex("_id"));
                 }
             } while ( cr1.moveToNext());
         }
-
 
         //Query the message table for the given message id
         int emailMsgId = 0;
@@ -2405,8 +2363,7 @@ public class BluetoothMasAppIf {
                 ContentValues values = new ContentValues();
                 values.put("flagRead", bluetoothMasAppParams.StatusValue);
                 context.getContentResolver().update(uri2, values, null, null);
-            }
-            else {
+            } else {
                 if (bluetoothMasAppParams.StatusValue == 1) { //if the email is deleted
                     msgFolderId = cr.getInt(cr.getColumnIndex("mailboxKey"));
                     if(msgFolderId == deletedFolderId){
@@ -2415,14 +2372,12 @@ public class BluetoothMasAppIf {
                         context.getContentResolver().delete(
                                 Uri.parse("content://com.android.email.provider/message/"
                                 + emailMsgId), null, null);
-                    }
-                    else{
+                    } else {
                         ContentValues values = new ContentValues();
                         values.put("mailboxKey", deletedFolderId);
                         context.getContentResolver().update(uri2, values, null, null);
                     }
-                }
-                else{ // if the email is undeleted
+                } else { // if the email is undeleted
                     ContentValues values = new ContentValues();
                     values.put("mailboxKey", inboxFolderId);
                     context.getContentResolver().update(uri2, values, null, null);
@@ -2431,10 +2386,8 @@ public class BluetoothMasAppIf {
             return ResponseCodes.OBEX_HTTP_OK;
         }
 
-
         return ResponseCodes.OBEX_HTTP_INTERNAL_ERROR;
     }
-
 
     /**
      * Enable/disable notification
@@ -2468,7 +2421,6 @@ public class BluetoothMasAppIf {
     public void disconnect() {
         clearDeletedItems();
     }
-
 
     /**
      * Start an MNS obex client session and push notification whenever available
@@ -2927,7 +2879,6 @@ public class BluetoothMasAppIf {
         }
         return folderName;
     }
-
 
     /**
      * Build an MMS bMessage when given a message handle

@@ -51,8 +51,6 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.CompoundButton.OnCheckedChangeListener;
-import android.widget.Toast;
-
 
 /**
  * MapActivity shows two dialogues: One for accepting incoming ftp request and
@@ -244,7 +242,6 @@ public class BluetoothMasActivity extends Activity implements
             onTimeout();
         }
 
-
     }
 
     @Override
@@ -288,4 +285,3 @@ public class BluetoothMasActivity extends Activity implements
         }
     };
 }
-

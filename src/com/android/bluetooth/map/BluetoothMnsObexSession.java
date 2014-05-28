@@ -28,13 +28,8 @@
 
 package com.android.bluetooth.map;
 
-import android.content.ContentValues;
 import android.content.Context;
-import android.net.Uri;
 import android.os.Handler;
-import android.os.Message;
-import android.os.PowerManager;
-import android.os.Process;
 import android.util.Log;
 
 import javax.obex.*;
@@ -66,7 +61,6 @@ public class BluetoothMnsObexSession {
 
     private Context mContext;
 
-
     private volatile boolean mWaitingForRemote;
 
     private Handler mCallback;
@@ -80,7 +74,6 @@ public class BluetoothMnsObexSession {
         mContext = context;
         mTransport = transport;
     }
-
 
     private ClientSession mCs;
 
@@ -208,7 +201,6 @@ public class BluetoothMnsObexSession {
                  long timestamp = 0;
                  int outputBufferSize = putOperation.getMaxPacketSize();
                  byte[] buffer = new byte[outputBufferSize];
-
 
                 FileInputStream fileInputStream = new FileInputStream(file);
                 BufferedInputStream a = new BufferedInputStream(fileInputStream, 0x4000);

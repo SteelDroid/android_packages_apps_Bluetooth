@@ -41,7 +41,6 @@ import java.util.Arrays;
 
 import android.bluetooth.BluetoothDevice;
 import android.content.Context;
-import android.content.Intent;
 import android.os.Handler;
 import android.os.Message;
 import android.text.format.Time;
@@ -49,11 +48,9 @@ import android.util.Log;
 
 import javax.obex.*;
 
-
 import com.android.bluetooth.map.BluetoothMasAppIf.BluetoothMasMessageListingRsp;
 import com.android.bluetooth.map.BluetoothMasAppIf.BluetoothMasMessageRsp;
 import com.android.bluetooth.map.BluetoothMasAppIf.BluetoothMasPushMsgRsp;
-
 
 public class BluetoothMasObexServer extends ServerRequestHandler {
 
@@ -99,7 +96,7 @@ public class BluetoothMasObexServer extends ServerRequestHandler {
         MAS_SERVER_UPDATE_INBOX,
         MAS_SERVER_PUSH_MESSAGE
     };
-    private static  MasState state = MasState.MAS_SERVER_DISCONNECTED;
+    private static MasState state = MasState.MAS_SERVER_DISCONNECTED;
 
      // 128 bit UUID for MAS
     private static final byte[] MAS_TARGET = new byte[] {
@@ -206,7 +203,6 @@ public class BluetoothMasObexServer extends ServerRequestHandler {
 
         public final boolean parse(byte[] params) {
             int i = 0;
-
 
             if (D) Log.d(TAG, "Parse App. Params: Enter");
 
@@ -1119,4 +1115,3 @@ public class BluetoothMasObexServer extends ServerRequestHandler {
         return returnvalue;
     }
 };
-

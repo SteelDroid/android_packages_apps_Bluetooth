@@ -99,4 +99,3 @@ public class BluetoothMapAuthenticator implements Authenticator {
         return b;
     }
 }
-

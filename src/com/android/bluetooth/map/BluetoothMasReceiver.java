@@ -26,6 +26,7 @@
  * ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 package com.android.bluetooth.map;
+
 import android.bluetooth.BluetoothAdapter;
 import android.content.Intent;
 import android.content.BroadcastReceiver;

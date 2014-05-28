@@ -29,26 +29,17 @@
 package com.android.bluetooth.map.MapUtils;
 
 import java.util.List;
-import java.util.Set;
 
-import android.content.Context;
-import android.database.Cursor;
-import android.net.Uri;
-import android.provider.ContactsContract.Contacts;
-import android.provider.ContactsContract.PhoneLookup;
-import android.provider.ContactsContract.CommonDataKinds.Email;
 import android.text.format.Time;
 import android.util.Log;
 import android.util.TimeFormatException;
 
 import com.android.bluetooth.map.BluetoothMasAppParams;
 
-
-
 public class SmsMmsUtils {
 
-        public final String TAG = "SmsMmsUtils";
-        public static final int BIT_SUBJECT = 0x1;
+    public final String TAG = "SmsMmsUtils";
+    public static final int BIT_SUBJECT = 0x1;
     public static final int BIT_DATETIME = 0x2;
     public static final int BIT_SENDER_NAME = 0x4;
     public static final int BIT_SENDER_ADDRESSING = 0x8;
@@ -68,7 +59,7 @@ public class SmsMmsUtils {
     public static final int BIT_PROTECTED = 0x4000;
     public static final int BIT_REPLYTO_ADDRESSING = 0x8000;
 
-        private final String Inbox = "inbox";
+    private final String Inbox = "inbox";
     private final String Outbox = "outbox";
     private final String Sent = "sent";
     private final String Deleted = "deleted";

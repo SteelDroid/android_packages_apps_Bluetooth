@@ -34,7 +34,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
 import javax.obex.*;
 
 import android.bluetooth.BluetoothSocket;
@@ -84,4 +83,3 @@ public class BluetoothMapRfcommTransport implements ObexTransport {
     }
 
 }
-

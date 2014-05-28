@@ -28,7 +28,6 @@
 
 package com.android.bluetooth.map;
 
-
 import com.android.bluetooth.R;
 
 import android.app.Activity;
@@ -42,8 +41,8 @@ import android.os.Handler;
 import android.os.Message;
 import android.preference.Preference;
 import android.text.InputFilter;
-import android.text.TextWatcher;
 import android.text.InputFilter.LengthFilter;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -229,7 +228,6 @@ public class BluetoothMasTestActivity extends Activity implements
         }
     }
 
-
     private void onTimeout() {
         // TODO - Implement appropriate timeout function
     }
@@ -288,4 +286,3 @@ public class BluetoothMasTestActivity extends Activity implements
         }
     };
 }
-

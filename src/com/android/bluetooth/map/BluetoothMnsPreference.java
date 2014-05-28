@@ -67,7 +67,6 @@ public class BluetoothMnsPreference {
 
     public static final String BLUETOOTHMNS_CHANNEL_PREFERENCE = "btmns_channels";
 
-
     public static BluetoothMnsPreference getInstance(Context context) {
         synchronized (INSTANCE_LOCK) {
             if (INSTANCE == null) {

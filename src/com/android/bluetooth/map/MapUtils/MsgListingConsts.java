@@ -28,7 +28,7 @@
 
 package com.android.bluetooth.map.MapUtils;
 
-public class MsgListingConsts {
+    public class MsgListingConsts {
 
 	public class MsgInfo {
         public String dateTime = null;
@@ -123,7 +123,6 @@ public class MsgListingConsts {
     public void setSendRecipient_addressing(boolean flag) {
         this.sendRecipient_addressing = flag;
     }
-
 
     public void setRecepient_addressing(String recepient_addressing) {
         this.recepient_addressing = recepient_addressing;

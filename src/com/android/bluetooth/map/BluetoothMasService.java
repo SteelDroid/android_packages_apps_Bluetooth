@@ -36,7 +36,6 @@ import java.lang.reflect.Method;
 
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
@@ -44,9 +43,6 @@ import android.bluetooth.BluetoothServerSocket;
 import android.bluetooth.BluetoothSocket;
 import android.content.Context;
 import android.content.Intent;
-import android.database.ContentObserver;
-import android.database.Cursor;
-import android.database.CursorJoiner;
 import android.net.Uri;
 import android.os.Handler;
 import android.os.IBinder;
@@ -56,7 +52,6 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import javax.obex.*;
-
 
 public class BluetoothMasService extends Service {
     private static final String TAG = "BluetoothMasService";

@@ -109,17 +109,17 @@
     <!-- Label for a hide button.-->
     <string name="download_ok">Hide</string>
 
-    <!-- Bluetooth failed Download  Dialog -->
-    <!--Line 1  -->
+    <!-- Bluetooth failed Download Dialog -->
+    <!--Line 1 -->
     <string name="download_fail_line1">File not received</string>
-    <!--Line 2  -->
+    <!--Line 2 -->
     <string name="download_fail_line2">File: <xliff:g id="file">%1$s</xliff:g></string>
-    <!--Line 3  -->
+    <!--Line 3 -->
     <string name="download_fail_line3">Failure reason: <xliff:g id="reason">%1$s</xliff:g></string>
     <!-- Label for ok button.-->
     <string name="download_fail_ok">OK</string>
 
-    <!-- Bluetooth Successful Download  Dialog -->
+    <!-- Bluetooth Successful Download Dialog -->
     <!--Line 4 in "Bluetooth Download Progress Dialog" -->
     <string name="download_succ_line5">File received</string>
     <!-- Label for a OK button.-->
@@ -151,7 +151,7 @@
     <string name="not_exist_file">File does not exist</string>
     <string name="not_exist_file_desc">The file does not exist! \n</string>
 
-    <!-- Bluetooth  Enabling progress dialog -->
+    <!-- Bluetooth Enabling progress dialog -->
     <string name="enabling_progress_title">Please wait\u2026</string>
     <string name="enabling_progress_content">Turning on bluetooth\u2026</string>
 
@@ -179,7 +179,7 @@
     <string name="status_forbidden">This transfer is forbidden by the target device</string>
     <string name="status_canceled">This transfer was canceled by the user</string>
     <string name="status_file_error">Storage issue</string>
-    <!-- Shown when USB storage cannot be found.  [CHAR LIMIT=NONE] -->
+    <!-- Shown when USB storage cannot be found. [CHAR LIMIT=NONE] -->
     <string name="status_no_sd_card" product="nosdcard">No USB storage.</string>
     <string name="status_no_sd_card" product="default">No SD card. Insert an SD card to save transferred files.</string>
     <string name="status_connection_error">Connection failure</string>
@@ -205,7 +205,7 @@
     <string name="transfer_menu_clear">Clear from list</string>
     <string name="transfer_clear_dlg_title">Clear</string>
 
-     <!-- Do not translate. file name used for sharing. -->
+    <!-- Do not translate. file name used for sharing. -->
     <string name="bluetooth_share_file_name" translatable="false">bluetooth_content_share</string>
 
     <!-- Used to run Bluetooth.apk in another process if needed -->

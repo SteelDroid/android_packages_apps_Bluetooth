@@ -28,7 +28,6 @@
 
 package com.android.bluetooth.map;
 
-
 public final class BluetoothMasSpecParams {
 
     public static final int MAS_TAG_MAX_LIST_COUNT            = 0x01;
@@ -48,7 +47,7 @@ public final class BluetoothMasSpecParams {
     public static final int MAS_TAG_MAS_INSTANCE_ID           = 0x0F;
     public static final int MAS_TAG_PARAMETER_MASK            = 0x10;
     public static final int MAS_TAG_FOLDER_LISTING_SIZE       = 0x11;
-    public static final int MAS_TAG_MESSAGE_LISTING_SIZE     = 0x12;
+    public static final int MAS_TAG_MESSAGE_LISTING_SIZE      = 0x12;
     public static final int MAS_TAG_SUBJECT_LENGTH            = 0x13;
     public static final int MAS_TAG_CHARSET                   = 0x14;
     public static final int MAS_TAG_FRACTION_REQUEST          = 0x15;
@@ -71,9 +70,9 @@ public final class BluetoothMasSpecParams {
     public static final int MAS_TAG_NOTIFICATION_STATUS_LEN       = 0x01;
     public static final int MAS_TAG_MAS_INSTANCE_ID_LEN           = 0x01;
     public static final int MAS_TAG_FOLDER_LISTING_SIZE_LEN       = 0x02;
-    public static final int MAS_TAG_MESSAGE_LISTING_SIZE_LEN     = 0x02;
+    public static final int MAS_TAG_MESSAGE_LISTING_SIZE_LEN      = 0x02;
     public static final int MAS_TAG_CHARSET_LEN                   = 0x01;
-    public static final int MAS_TAG_FRACTION_REQUEST_LEN         = 0x01;
+    public static final int MAS_TAG_FRACTION_REQUEST_LEN          = 0x01;
     public static final int MAS_TAG_FRACTION_DELIVER_LEN          = 0x01;
     public static final int MAS_TAG_STATUS_INDICATOR_LEN          = 0x01;
     public static final int MAS_TAG_STATUS_VALUE_LEN              = 0x01;
@@ -126,7 +125,4 @@ public final class BluetoothMasSpecParams {
     public static final int MAS_TAG_STATUS_VALUE_MIN_VAL          = 0x00;
     public static final int MAS_TAG_STATUS_VALUE_MAX_VAL          = 0x01;
 
-
-
 };
-

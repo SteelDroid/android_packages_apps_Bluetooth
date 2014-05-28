@@ -37,8 +37,6 @@ import java.io.OutputStream;
 import javax.obex.*;
 import android.bluetooth.BluetoothSocket;
 
-
-
 public class BluetoothMnsRfcommTransport implements ObexTransport {
 
     private final BluetoothSocket mSocket;
